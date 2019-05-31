@@ -1,0 +1,27 @@
+.colored-cards {
+  margin: 0 -12px 0 -12px;
+
+  &-wrapper {
+    position: relative;
+    padding-top: 75px;
+
+    &:before {
+      display: block;
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 120px;
+      border: 2px solid map-get($theme-colors, "white");
+
+      @include media-breakpoint-down(md) {
+        bottom: 100px;
+      }
+    }
+  }
+
+  &__item {
+    padding: 0 12px;
+  }
+}

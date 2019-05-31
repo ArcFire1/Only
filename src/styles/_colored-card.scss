@@ -1,0 +1,102 @@
+.colored-card {
+  display: block;
+  position: relative;
+  background-color: map-get($theme-colors, "primary");
+  margin-bottom: 40px;
+  padding: 40px 30px;
+  width: 100%;
+  min-height: 320px;
+
+  @include media-breakpoint-down(xl) {
+    min-height: 240px;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 20px;
+    min-height: 150px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 20px;
+  }
+
+  &__title {
+    font-family: $font-proxima;
+    font-weight: 300;
+    font-size: 18px;
+    color: map-get($theme-colors, "white");
+
+    @include media-breakpoint-down(md) {
+      font-size: 16px;
+      max-width: 80%;
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-bottom: 40px;
+      max-width: 100%;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+
+    @include media-breakpoint-down(md) {
+      width: 70px;
+      height: 70px;
+    }
+    @include media-breakpoint-down(xs) {
+      display: block;
+      position: relative;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__arrow {
+    font-size: 18px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: text-bottom;
+    transition: 0.3s ease;
+    width: 0px;
+    line-height: 1;
+  }
+
+  &__link {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+    font-family: $font-proxima;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1;
+    color: map-get($theme-colors, "white");
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: map-get($theme-colors, "white");
+      text-decoration: none;
+
+      .colored-card__arrow {
+        width: 30px;
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      display: inline-block;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      margin-bottom: 0px;
+    }
+  }
+}

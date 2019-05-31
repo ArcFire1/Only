@@ -1,0 +1,25 @@
+.logo {
+  @include media-breakpoint-down(xxl) {
+    height: 100px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    height: 80px;
+  }
+
+  @include media-breakpoint-down(md) {
+    height: 60px;
+  }
+
+  &-fixed {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 500;
+    transition: 1s ease;
+
+    &_visible {
+      left: 0;
+    }
+  }
+}

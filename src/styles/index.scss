@@ -1,0 +1,20 @@
+$imagesPath: "../../public/img/" !default;
+$fontsPath: "../../public/fonts/" !default;
+
+@import "bootstrap-settings/grid";
+@import "bootstrap-settings/_fonts";
+@import "bootstrap-settings/settings";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "header";
+@import "heading";
+@import "promo";
+@import "steps";
+@import "step";
+@import "btn";
+@import "colored-cards";
+@import "colored-card";
+@import "logo";
+@import "hamburger";
+@import "menu";

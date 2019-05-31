@@ -1,0 +1,20 @@
+.btn {
+
+  &-expanded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-family: $font-proxima;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    @include media-breakpoint-down(sm) {
+      height: auto;
+      margin-bottom: 10px;
+    }
+  }
+}

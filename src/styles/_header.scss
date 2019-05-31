@@ -1,0 +1,126 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  min-height: 720px;
+  background-image: url('../../public/img/header-bg.jpg');
+
+  @include media-breakpoint-down(xl) {
+    min-height: 600px;
+  }
+
+  @include media-breakpoint-down(md) {
+    min-height: 480px;
+  }
+
+  &-block {
+    &__label {
+      font-family: $font-proxima;
+      margin-bottom: 60px;
+      font-size: 12px;
+      color: map-get($theme-colors, "white");
+
+      @include media-breakpoint-down(xxl) {
+        margin-bottom: 40px;
+      }
+    
+      @include media-breakpoint-down(md) {
+        margin-bottom: 20px;
+      }
+    }
+    &__title {
+      font-family: $font-proxima;
+      font-weight: 800;
+      font-size: 70px;
+      line-height: 1.125;
+      color: map-get($theme-colors, "white");
+
+      @include media-breakpoint-down(xxl) {
+        font-size: 60px;
+      }
+    
+      @include media-breakpoint-down(md) {
+        font-size: 42px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: 34px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: 0;
+    margin: 0;
+    padding: 0;
+
+    @include media-breakpoint-down(sm) {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      display: block;
+      position: relative;
+      padding: 40px 80px;
+      width: 100%;
+      height: 270px;
+      color: map-get($theme-colors, "white");
+      border-top: 1px solid rgba($color: #fff, $alpha: 0.2);
+      border-right: 1px solid rgba($color: #fff, $alpha: 0.2);
+
+      &:before {
+        display: block;
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 80px;
+        height: 2px;
+        width: 80px;
+        background-color: map-get($theme-colors, "white");
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+
+      @include media-breakpoint-down(xxl) {
+        height: 170px;
+      }
+    
+      @include media-breakpoint-down(xl) {
+        height: 150px;
+        padding: 40px;
+
+        &:before {
+          left: 40px;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        height: 100px;
+        padding: 20px;
+
+        &:before {
+          left: 20px;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        height: auto;
+        width: 50%;
+      }
+
+      @include media-breakpoint-down(xs) {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}

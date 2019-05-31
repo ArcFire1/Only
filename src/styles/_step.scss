@@ -1,0 +1,153 @@
+.step {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 2px;
+  width: 100%;
+  background: map-get($theme-colors, "white");
+  z-index: 1;
+
+  &:before,
+  &:after {
+    display: block;
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 80px;
+    height: 2px;
+    background-color: map-get($theme-colors, "primary");
+
+    @keyframes hover-step {
+      50% {
+        width: 100%;
+        height: 2px;
+      }
+      100% {
+        width: 100%;
+        height: 35%;
+      }
+    }
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
+
+  &:hover {
+    &:before,
+    &:after {
+      animation-name: hover-step;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    height: 320px;
+    background-color: map-get($theme-colors, "secondary");
+    z-index: 2;
+
+    @include media-breakpoint-down(xl) {
+      height: 220px;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 180px;
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 260px;
+    font-family: $font-proxima;
+    font-weight: 800;
+    color: map-get($theme-colors, "white");
+    z-index: -1;
+
+    @include media-breakpoint-down(xl) {
+      font-size: 200px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 160px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-family: $font-proxima;
+    font-weight: 800;
+    font-size: 28px;
+    color: map-get($theme-colors, "dark-gray");
+
+    @include media-breakpoint-down(xl) {
+      font-size: 22px;
+      text-align: center;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 28px;
+    color: map-get($theme-colors, "dark-gray");
+
+    @include media-breakpoint-down(xl) {
+      font-size: 22px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: map-get($theme-colors, "dark-gray");
+    transition: 0.3s ease;
+
+    &:after {
+      display: block;
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: map-get($theme-colors, "dark-gray");
+      opacity: 0.2;
+      transition: 0.3s ease;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: map-get($theme-colors, "primary");
+      text-decoration: none;
+
+      &:after {
+        background-color: map-get($theme-colors, "primary");
+      }
+    }
+  }
+}

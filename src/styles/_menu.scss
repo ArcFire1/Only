@@ -1,0 +1,122 @@
+.menu {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: space-between;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: map-get($theme-colors, "black");
+  z-index: 9998;
+  transition: 0.5s ease;
+
+  &_active {
+    top: 0;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(xs) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &-link {
+    position: relative;
+    font-family: $font-proxima;
+    font-weight: 800;
+    font-size: 18px;
+    color: map-get($theme-colors, "medium-gray");
+    transition: 0.3s ease;
+
+    &:after {
+      display: block;
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: map-get($theme-colors, "medium-gray");
+      opacity: 0.2;
+      transition: 0.3s ease;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      color: map-get($theme-colors, "white");
+
+      &:after {
+        background-color: map-get($theme-colors, "white");
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-top: 20px;
+    }
+  }
+
+  &-list {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__link {
+      font-family: $font-proxima;
+      font-weight: 800;
+      font-size: 60px;
+      color: map-get($theme-colors, "white");
+      transition: 0.3s ease;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+        color: map-get($theme-colors, "dark");
+      }
+
+      @include media-breakpoint-down(xxl) {
+        font-size: 42px;
+      }
+
+      @include media-breakpoint-down(xl) {
+        font-size: 32px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 24px;
+      }
+
+      @include media-breakpoint-down(xs) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @include media-breakpoint-down(xs) {
+      flex-direction: column;
+    }
+
+    &__label {
+      display: block;
+      font-family: $font-proxima;
+      font-weight: 300;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: map-get($theme-colors, "white");
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  border: none;
+  background-color: map-get($theme-colors, "black");
+  z-index: 9999;
+
+  @include media-breakpoint-down(xxl) {
+    width: 100px;
+    height: 100px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    width: 80px;
+    height: 80px;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 60px;
+    height: 60px;
+  }
+  
+
+  &__icon {
+    display: block;
+    position: relative;
+    width: 32px;
+    height: 2px;
+    background-color: map-get($theme-colors, "white");
+    transition: 0.3s ease;
+
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 32px;
+      height: 2px;
+      background-color: map-get($theme-colors, "white");
+      transition: 0.3s ease;
+    }
+
+    &:before {
+      top: -9px;
+    }
+
+    &:after {
+      bottom: -9px;
+    }
+  }
+
+  &_active {
+    .hamburger__icon {
+      background-color: map-get($theme-colors, "black");
+
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

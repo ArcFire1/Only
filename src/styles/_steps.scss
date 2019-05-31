@@ -1,0 +1,47 @@
+.steps {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  @include media-breakpoint-down(xl) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  &-grid {
+    margin: 0 -20px;
+  }
+
+  &-column {
+    padding: 0 20px;
+  }
+
+  &-footer {
+    margin-top: 20px;
+    margin-bottom: 120px;
+
+    &__info {
+      margin-left: 32px;
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+
+    &__label {
+      margin-bottom: 0;
+      font-weight: 300;
+      font-size: 16px;
+      color: map-get($theme-colors, "dark-gray");
+    }
+
+    &__price {
+      margin-bottom: 0;
+      font-family: $font-proxima;
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 1;
+      color: map-get($theme-colors, "dark");
+    }
+  }
+}
