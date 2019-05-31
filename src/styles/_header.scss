@@ -5,6 +5,8 @@
   height: 100vh;
   min-height: 720px;
   background-image: url('../../public/img/header-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @include media-breakpoint-down(xl) {
     min-height: 600px;
